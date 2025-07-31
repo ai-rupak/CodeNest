@@ -29,7 +29,7 @@ function Footer() {
               { href: "/support", label: "Support" },
               { href: "/privacy", label: "Privacy" },
               { href: "/terms", label: "Terms" }
-            ].map((link, index) => (
+            ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
