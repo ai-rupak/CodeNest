@@ -12,5 +12,5 @@ export default async function NavigationHeaderServer() {
     userId: user?.id || "",
   });
 
-  return <NavigationHeaderClient user={user} convexUser={convexUser} />;
+  return <NavigationHeaderClient  convexUser={convexUser} />;
 }

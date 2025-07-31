@@ -6,7 +6,7 @@ import { SignedOut, SignedIn } from "@clerk/nextjs";
 import { Blocks, Code2, Sparkles } from "lucide-react";
 import Link from "next/link";
 
-export default function NavigationHeaderClient({  convexUser }: { convexUser: any }) {
+export default function NavigationHeaderClient({  convexUser }: { convexUser: any}) {
   return (
     <div className="sticky top-0 ...">
       <div className="sticky top-0 z-50 w-full border-b border-gray-800/50 bg-gray-950/90 backdrop-blur-xl backdrop-saturate-150">
