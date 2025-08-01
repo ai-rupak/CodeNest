@@ -1,4 +1,4 @@
-import NavigationHeader from "@/components/NavigationHeaderClient.tsx";
+import NavigationHeader from "@/components/NavigationHeaderClient";
 
 function SnippetLoadingSkeleton() {
   return (
