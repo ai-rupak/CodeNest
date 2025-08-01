@@ -64,3 +64,14 @@ export interface Snippet {
   title: string;
   userName: string;
 }
+
+export interface ConvexUser {
+  _id: string;
+  name: string;
+  email: string;
+  userId: string;
+  isPro: boolean;
+  proSince?: number;
+  lemonSqueezyCustomerId?: string;
+  lemonSqueezyOrderId?: string;
+}

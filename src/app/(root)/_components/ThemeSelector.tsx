@@ -11,7 +11,7 @@ const THEME_ICONS: Record<string, React.ReactNode> = {
   "vs-dark": <Moon className="size-4" />,
   "vs-light": <Sun className="size-4" />,
   "github-dark": <Github className="size-4" />,
-  monokai: <Laptop className="size-4" />,
+  "monokai": <Laptop className="size-4" />,
   "solarized-dark": <Cloud className="size-4" />,
 };
 
