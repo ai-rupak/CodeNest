@@ -4,13 +4,7 @@ import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useState } from "react";
 import { 
   Terminal, 
-  Play, 
-  Square, 
   Keyboard, 
-  Bot, 
-  Sparkles,
-  ChevronUp,
-  ChevronDown
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import RunningCodeSkeleton from "./RunningCodeSkeleton";
