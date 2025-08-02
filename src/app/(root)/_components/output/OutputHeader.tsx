@@ -9,7 +9,7 @@ function OutputHeader({
   hasError 
 }: {
   hasContent: string | null;
-  // isRunning: boolean;
+  isRunning: boolean;
   showInput: boolean;
   onToggleInput: () => void;
   onAIHelp: () => void;
