@@ -19,7 +19,7 @@ import AISupport from "./output/AISupport";
 
 function OutputPanel() {
   const { output, error, isRunning } = useCodeEditorStore();
-  const [input, setInput] = useState("");
+  // const [input, setInput] = useState("");
   const [showInput, setShowInput] = useState(false);
   const [showAISupport, setShowAISupport] = useState(false);
 
@@ -29,11 +29,11 @@ function OutputPanel() {
   const mounted = useMounted();
 
 
-  const handleInputSubmit = (inputValue: string) => {
-    // Handle input submission logic here
-    console.log("Input submitted:", inputValue);
-    setInput(inputValue);
-  };
+  // const handleInputSubmit = (inputValue: string) => {
+  //   // Handle input submission logic here
+  //   console.log("Input submitted:", inputValue);
+  //   setInput(inputValue);
+  // };
 
   const handleAIHelp = () => {
     setShowAISupport(true);
@@ -68,7 +68,7 @@ function OutputPanel() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <InputPanel onSubmit={handleInputSubmit} />
+              <InputPanel />
             </motion.div>
           )}
         </AnimatePresence>

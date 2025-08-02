@@ -3,16 +3,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 
-function InputPanel({ onSubmit }: { onSubmit: (value: string) => void }) {
+function InputPanel() {
   const { input, setInput } = useCodeEditorStore();
   const [isFocused, setIsFocused] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (input.trim()) {
-      onSubmit(input);
-    }
-  };
+
 
   const handleClear = () => {
     setInput("");
@@ -37,7 +32,7 @@ function InputPanel({ onSubmit }: { onSubmit: (value: string) => void }) {
         </span>
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form  className="space-y-3">
         {/* Input Area */}
         <div className="relative group">
           <motion.div
