@@ -1,7 +1,7 @@
 "use client";
 import HeaderProfileBtn from "@/app/(root)/_components/HeaderProfileBtn";
 import { SignedOut } from "@clerk/nextjs";
-import { Blocks, Code2, Sparkles, Menu, X } from "lucide-react";
+import { Code2, Sparkles, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import CodeNestLogo from "./CodeNestLogo";

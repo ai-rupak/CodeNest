@@ -1,4 +1,4 @@
-import { Keyboard, Send, RotateCcw } from "lucide-react";
+import { Keyboard, RotateCcw } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
