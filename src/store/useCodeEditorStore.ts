@@ -25,6 +25,8 @@ const getInitialState = () => {
   };
 };
 
+
+
 export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
   const initialState = getInitialState();
 
@@ -35,6 +37,11 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
     error: null,
     editor: null,
     executionResult: null,
+    input: "",
+
+
+    setInput: (input: string) => set({ input }),
+
 
     getCode: () => get().editor?.getValue() || "",
 
@@ -93,6 +100,7 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
             language: runtime.language,
             version: runtime.version,
             files: [{ content: code }],
+            stdin: get().input,
           }),
         });
 

@@ -2,12 +2,13 @@ import { currentUser } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
-import {  Code2, CodeXmlIcon, Sparkles } from "lucide-react";
+import { Code2, CodeXmlIcon, Sparkles } from "lucide-react";
 import { SignedIn } from "@clerk/nextjs";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
 import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
+import CodeNestLogo from "@/components/CodeNestLogo";
 
 async function Header() {
   const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
@@ -21,46 +22,16 @@ async function Header() {
     <div className="relative z-10">
       <div
         className="flex items-center justify-between 
-        bg-[#0a0a0f]/90 backdrop-blur-xl p-4 sm:p-5 lg:p-6 mb-4 rounded-lg
+        bg-[#0a0a0f]/90 backdrop-blur-xl p-3 sm:p-4 lg:p-6 mb-4 rounded-lg
         border border-gray-800/50 shadow-2xl"
       >
         {/* Left section - Logo and Navigation */}
-        <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 min-w-0">
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group relative flex-shrink-0">
-            {/* Logo hover effect */}
-            <div
-              className="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 
-                group-hover:opacity-100 transition-all duration-500 blur-xl"
-            />
-
-            {/* Logo */}
-            <div
-              className="relative bg-gradient-to-br from-[#1a1a2e] to-[#0a0a0f] p-1.5 sm:p-2 rounded-xl ring-1
-              ring-white/10 group-hover:ring-white/20 transition-all"
-            >
-              <CodeXmlIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500" />
-            </div>
-
-            {/* Desktop brand info */}
-            <div className="hidden lg:flex flex-col">
-              <span className="block text-lg font-semibold bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400 text-transparent bg-clip-text">
-                CodeNest
-              </span>
-              <span className="block text-xs text-blue-400/60 font-medium">
-                Interactive Code Editor
-              </span>
-            </div>
-
-            {/* Mobile/Tablet brand info */}
-            <div className="flex lg:hidden flex-col">
-              <span className="block text-base sm:text-lg font-semibold bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400 text-transparent bg-clip-text">
-                CodeNest
-              </span>
-            </div>
-          </Link>
+        <div className="flex items-center gap-3 sm:gap-4 lg:gap-8 min-w-0">
+          
+          <CodeNestLogo/>
 
           {/* Navigation - Hidden on mobile, shown on larger screens */}
-          <nav className="hidden md:flex items-center">
+          <nav className="hidden lg:flex items-center">
             <Link
               href="/snippets"
               className="relative group flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 
@@ -82,10 +53,10 @@ async function Header() {
         </div>
 
         {/* Right section - Controls and Profile */}
-        <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 lg:gap-4 flex-shrink-0">
           {/* Editor Controls */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
+            <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2">
               <ThemeSelector />
               <LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />
             </div>
@@ -94,15 +65,14 @@ async function Header() {
             {!convexUser?.isPro && (
               <Link
                 href="/pricing"
-                className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 lg:px-4 py-1.5 rounded-lg 
+                className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 lg:px-4 py-1.5 rounded-lg 
                 border border-amber-500/20 hover:border-amber-500/40 bg-gradient-to-r from-amber-500/10 
                 to-orange-500/10 hover:from-amber-500/20 hover:to-orange-500/20 
                 transition-all duration-300 group"
               >
-                <Sparkles className="w-4 h-4 text-amber-400 group-hover:text-amber-300 transition-colors group-hover:rotate-12" />
+                <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400 group-hover:text-amber-300 transition-colors group-hover:rotate-12" />
                 <span className="text-xs sm:text-sm font-medium text-amber-400/90 group-hover:text-amber-300 transition-colors">
-                  <span className="hidden sm:inline">Pro</span>
-                  <span className="sm:hidden">+</span>
+                  Pro
                 </span>
               </Link>
             )}
@@ -121,7 +91,7 @@ async function Header() {
       </div>
 
       {/* Mobile Navigation - Only show on small screens */}
-      <div className="md:hidden mb-4">
+      <div className="lg:hidden mb-4">
         <div className="bg-[#0a0a0f]/80 backdrop-blur-xl rounded-lg border border-gray-800/50 p-3">
           <Link
             href="/snippets"

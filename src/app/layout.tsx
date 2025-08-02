@@ -18,9 +18,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Code Craft",
-  description: "Share and run code snippets",
+  title: "Code Nest - Online Code Editor",
+  description: "An interactive online code editor with real-time collaboration, AI assistance, and a wide range of programming languages.",
 };
+
+
 
 export default function RootLayout({
   children,
