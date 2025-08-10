@@ -14,6 +14,7 @@ export interface Language {
   monacoLanguage: string;
   defaultCode: string;
   pistonRuntime: LanguageRuntime;
+
 }
 
 export interface LanguageRuntime {
@@ -47,6 +48,7 @@ export interface CodeEditorState {
   editor: Monaco | null;
   executionResult: ExecutionResult | null;
   input: string;
+
 
   setInput: (input: string) => void;
   setEditor: (editor: Monaco) => void;

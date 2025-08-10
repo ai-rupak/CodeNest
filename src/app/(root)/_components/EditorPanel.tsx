@@ -10,6 +10,7 @@ import { useClerk } from "@clerk/nextjs";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
 import useMounted from "@/hooks/useMounted";
 import ShareSnippetDialog from "./ShareSnippetDialog";
+import CopyButton from "@/app/snippets/[id]/_components/CopyButton";
 
 function EditorPanel() {
   const clerk = useClerk();
@@ -37,6 +38,7 @@ function EditorPanel() {
   };
 
   const handleEditorChange = (value: string | undefined) => {
+
     if (value) localStorage.setItem(`editor-code-${language}`, value);
   };
 
@@ -128,7 +130,7 @@ function EditorPanel() {
 
               {/* Refresh Button */}
               <motion.button
-                whileHover={{ scale: 1.05, rotate: -90 }}
+                whileHover={{ scale: 1.05}}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleRefresh}
                 className="p-2.5 bg-gradient-to-r from-[#1e1e2e] to-[#2a2a3a] hover:from-[#2a2a3a] hover:to-[#363649] rounded-xl ring-1 ring-white/10 transition-all duration-200 shadow-lg"
@@ -136,6 +138,18 @@ function EditorPanel() {
               >
                 <RotateCcwIcon className="size-4 text-gray-400" />
               </motion.button>
+
+                {/* Copy Button */}
+              <motion.button
+                whileHover={{ scale: 1.05}}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleRefresh}
+                className="p-2.5 bg-gradient-to-r from-[#1e1e2e] to-[#2a2a3a] hover:from-[#2a2a3a] hover:to-[#363649] rounded-xl ring-1 ring-white/10 transition-all duration-200 shadow-lg"
+                aria-label="Reset to default code"
+              >
+                <CopyButton style='none' code={editor?.getValue() || ""}  />
+              </motion.button>
+              
 
               {/* Share Button */}
               <motion.button

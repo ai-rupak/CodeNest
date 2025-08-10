@@ -18,7 +18,7 @@ const CodeBlock = ({ language, code }: { language: string; code: string }) => {
           <span className="text-sm text-gray-400">{language || "plaintext"}</span>
         </div>
         {/* button to copy code to clipboard */}
-        <CopyButton code={trimmedCode} />
+        <CopyButton style="" code={trimmedCode} />
       </div>
 
       {/* code block with syntax highlighting */}

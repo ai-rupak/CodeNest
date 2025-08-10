@@ -7,16 +7,16 @@ const getInitialState = () => {
   // if we're on the server, return default values
   if (typeof window === "undefined") {
     return {
-      language: "javascript",
-      fontSize: 16,
-      theme: "vs-dark",
+      language: "cpp",
+      fontSize: 13,
+      theme: "github-dark",
     };
   }
 
   // if we're on the client, return values from local storage bc localStorage is a browser API.
-  const savedLanguage = localStorage.getItem("editor-language") || "javascript";
-  const savedTheme = localStorage.getItem("editor-theme") || "vs-dark";
-  const savedFontSize = localStorage.getItem("editor-font-size") || 16;
+  const savedLanguage = localStorage.getItem("editor-language") || "cpp";
+  const savedTheme = localStorage.getItem("editor-theme") || "github-dark";
+  const savedFontSize = localStorage.getItem("editor-font-size") || 13;
 
   return {
     language: savedLanguage,

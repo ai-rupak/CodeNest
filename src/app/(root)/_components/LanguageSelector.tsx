@@ -15,6 +15,8 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
   const { language, setLanguage } = useCodeEditorStore();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const currentLanguageObj = LANGUAGE_CONFIG[language];
+  const FREE_LANGUAGES = ["javascript", "python", "cpp"];
+
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -28,7 +30,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
   }, []);
 
   const handleLanguageSelect = (langId: string) => {
-    if (!hasAccess && langId !== "javascript") return;
+if (!hasAccess && !FREE_LANGUAGES.includes(langId)) return;
 
     setLanguage(langId);
     setIsOpen(false);
@@ -89,7 +91,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
 
             <div className="max-h-[280px] overflow-y-auto overflow-x-hidden">
               {Object.values(LANGUAGE_CONFIG).map((lang, index) => {
-                const isLocked = !hasAccess && lang.id !== "javascript";
+                const isLocked = !hasAccess && !FREE_LANGUAGES.includes(lang.id);
 
                 return (
                   <motion.div
