@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { api } from "../../../../convex/_generated/api";
 import { Id } from "../../../../convex/_generated/dataModel";
 import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
-import { Clock, Code, MessageSquare, User, Terminal, Copy, Maximize2 } from "lucide-react";
+import { Clock, Code, MessageSquare, User, Terminal, Maximize2 } from "lucide-react";
 import { Editor } from "@monaco-editor/react";
 import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/app/(root)/_constants";
 import CopyButton from "./_components/CopyButton";
