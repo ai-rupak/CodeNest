@@ -1,5 +1,4 @@
-<h1 align="center">✨ SaaS Code Editor - CodeNest ✨</h1>
-<h1 align="center">🪶 AI Rupak CodeNest</h1>
+<h1 align="center">🪶 SaaS Code Editor - CodeNest ✨</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-14-black?logo=next.js" alt="Next.js">
@@ -11,7 +10,7 @@
 </p>
 
 <p align="center">
-  <b>AI Rupak CodeNest</b> is a <b>full-stack, real-time, multi-language online code editor</b> with AI-powered error suggestions, collaborative editing, and premium subscription support.
+  <b>CodeNest</b> is a <b>full-stack, real-time, multi-language online code editor</b> with AI-powered error suggestions, collaborative editing, and premium subscription support.
 </p>
 
 <hr/>
@@ -169,7 +168,7 @@ npm run dev
 <hr/>
 
 <h2>👨‍💻 Author</h2>
-<p><b>Rupak Swar Bta</b><br/>
+<p><b>Rupak Swar</b><br/>
 🌐 <a href="https://yourwebsite.com">Portfolio/Website</a><br/>
 🐦 <a href="https://twitter.com/yourhandle">Twitter</a><br/>
 💻 <a href="https://github.com/yourusername">GitHub</a></p>
